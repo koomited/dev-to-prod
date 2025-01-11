@@ -1,0 +1,20 @@
+id: push_flow_to_git
+namespace: company.engineering
+
+variables:
+  gh_username: koomited
+  gh_repo: https://github.com/koomited/dev-to-prod
+
+tasks:
+  - id: commit_and_push
+    type: io.kestra.plugin.git.PushFlows
+    username: "{{vars.gh_username}}"
+    password: "{{secret('GITHUB_ACCESS_TOKEN')}}"
+    url: "{{vars.gh_repo}}"
+    branch: dev
+    flows: "*"
+    sourceNamespace: system
+    targetNamespace: company.eng
+    gitDirectory: flows
+    commitMessage: add flows {{now()}}
+    
