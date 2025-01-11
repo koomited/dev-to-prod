@@ -1,5 +1,5 @@
 id: push_to_git
-namespace: company.eng
+namespace: company.engineering
 
 variables:
   gh_username: koomited
@@ -8,7 +8,7 @@ variables:
 tasks:
   - id: push_flow
     type: io.kestra.plugin.git.PushFlows
-    sourceNamespace: zoomcamp
+    sourceNamespace: system
     targetNamespace: company.engineering
     flows: "*"
     includeChildNamespaces: true
@@ -22,7 +22,7 @@ tasks:
 
   - id: push_namespace_files
     type: io.kestra.plugin.git.PushNamespaceFiles
-    namespace: zoomcamp
+    namespace: company.engineering
     files: "*"
     gitDirectory: _files
     url: "{{vars.gh_repo}}"

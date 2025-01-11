@@ -1,5 +1,5 @@
 id: push_flow_to_git
-namespace: company.eng
+namespace: company.engineering
 
 variables:
   gh_username: koomited
