@@ -22,7 +22,7 @@ tasks:
 
   - id: push_namespace_files
     type: io.kestra.plugin.git.PushNamespaceFiles
-    namespace: zoomcamp
+    namespace: company.engineering
     files: "*"
     gitDirectory: _files
     url: "{{vars.gh_repo}}"
